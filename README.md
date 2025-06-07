@@ -72,10 +72,12 @@ function stealthGuard(transactionData) {
 ```
 #### How it works:
 Goal: Catch transactions flying under the radar
+
 Method:
 - Take the transaction amount
 - Divide by total token volume
 - Multiply by √(token age)
+  
 Trigger: If the score exceeds 2, the trade is flagged
 
 #### Why it matters:
