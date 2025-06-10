@@ -15,3 +15,29 @@ def summarize_whale_behavior(trends):
     for t in trends:
         counts[t] += 1
     return counts
+
+
+class TemporalRiskEngine:
+    def __init__(self, sensitivity: float = 0.3):
+        self.sensitivity = sensitivity
+
+    def assess(self, sequence: List[float]) -> float:
+        drift = np.diff(sequence)
+        vol = np.std(drift)
+        return min(1.0, vol * self.sensitivity)
+
+
+class WalletBehaviorModel:
+    def __init__(self, activity_data: Dict[str, int]):
+        self.data = activity_data
+
+    def label_behavior(self) -> Dict[str, str]:
+        result = {}
+        for addr, tx_count in self.data.items():
+            if tx_count > 500:
+                result[addr] = "whale"
+            elif tx_count > 100:
+                result[addr] = "active"
+            else:
+                result[addr] = "sleeper"
+        return result
