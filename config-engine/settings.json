@@ -1,5 +1,5 @@
 {
-  "project": "Sylphia",
+  "project": "ObscuraTrace",
   "version": "1.0",
   "enabledModules": ["bot", "sybil", "whale", "flashloan"],
   "maxRequestsPerMinute": 60,
