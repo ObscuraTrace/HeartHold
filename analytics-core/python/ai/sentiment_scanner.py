@@ -1,5 +1,10 @@
 from collections import Counter
 
+import statistics
+import math
+import numpy as np
+from typing import List, Dict
+
 def extract_keywords(tweets):
     keywords = []
     for t in tweets:
