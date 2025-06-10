@@ -19,3 +19,30 @@ def risk_alert(tx_density, token_age_days, recent_alerts):
 
 def log_trace(event, metadata):
     print(f"[TRACE] {event} — {metadata} at {time.time()}")
+
+
+
+class LiquidityPressureIndex:
+    def __init__(self):
+        self.history = []
+
+    def update(self, liquidity: float):
+        self.history.append(liquidity)
+        if len(self.history) > 20:
+            self.history.pop(0)
+
+    def compute_index(self) -> float:
+        if len(self.history) < 5:
+            return 0.0
+        change = np.diff(self.history)
+        return np.sum(change[-5:]) / 5
+
+
+def sudden_spike_detection(series: List[float], factor: float = 2.5) -> List[int]:
+    spikes = []
+    mean = statistics.mean(series)
+    std = statistics.stdev(series)
+    for idx, val in enumerate(series):
+        if abs(val - mean) > factor * std:
+            spikes.append(idx)
+    return spikes
