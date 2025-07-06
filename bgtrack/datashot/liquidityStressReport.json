@@ -1,40 +1,40 @@
 {
-  "auditReportId": "selka_audit_20250628_042",
+  "traceId": "obscura_trace_20250628_042",
   "scannedAt": "2025-06-28T12:25:00Z",
-  "subjectWallet": {
-    "address": "FJt8xk3qAsy3BGNq9YqTrRZ12eXbwV5rWh2hkShx9N3v",
-    "labels": ["⚠️ suspect", "⚡️high_activity"],
-    "firstActivity": "2025-06-19T07:12:00Z"
+  "subject": {
+    "wallet": "FJt8xk3qAsy3BGNq9YqTrRZ12eXbwV5rWh2hkShx9N3v",
+    "tags": ["🦇 anomalous", "🔁 rapid-fire"],
+    "firstSeen": "2025-06-19T07:12:00Z"
   },
-  "snapshot": {
-    "txCount_24h": 312,
-    "tokensTouched": 18,
-    "tokensSpawned": 3,
-    "bridgeUsage": [],
-    "volumeMoved_SOL": 1987.43
+  "activitySnapshot": {
+    "txFrequency_24h": 312,
+    "interactedTokens": 18,
+    "spawnedTokens": 3,
+    "bridgeSignals": [],
+    "solanaVolume": 1987.43
   },
-  "behaviors": [
+  "suspicionTraits": [
     {
-      "label": "Token Seeder",
-      "detail": "Created 3 new tokens within the last 24h"
+      "code": "SEED_RUNNER",
+      "description": "Issued 3 fresh tokens in past 24h"
     },
     {
-      "label": "Bridge Looper",
-      "detail": "Multiple inbound/outbound bridge flows detected in tight intervals"
+      "code": "LOOPED_PASSAGE",
+      "description": "Bridge entry/exit patterns show cycling behavior"
     },
     {
-      "label": "Burst Transfers",
-      "detail": "Over 300 txs in 24h — automated or scripted behavior likely"
+      "code": "TRANSFER_BURST",
+      "description": "Detected >300 transfers in 24h — automation suspected"
     }
   ],
-  "flags": {
-    "tokenCreationSpike": true,
-    "bridgeCycling": true,
-    "spamRiskDetected": true
+  "anomalyFlags": {
+    "tokenSurge": true,
+    "bridgeLoop": true,
+    "spamSignature": true
   },
-  "selkaScore": {
-    "threatLevel": "Elevated",
-    "numericScore": 87,
-    "advisory": "Flag for active watch. Throttle transfers if supported"
+  "obscuraRating": {
+    "status": "⚠️ Shadow Elevated",
+    "score": 87,
+    "verdict": "Mark for shadow tracking. Recommend throttling or isolation if possible"
   }
 }
