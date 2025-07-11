@@ -1,66 +1,143 @@
-
+/**
+ * Configuration for VaultCoreEngine
+ */
 export interface VaultConfig {
-  networkId: string
-  clientId: string
-  retryLimit: number
+  /** Network identifier (e.g. "mainnet", "devnet") */
+  readonly networkId: string
+  /** Client-specific API key or ID */
+  readonly clientId: string
+  /** Maximum retry attempts for RPC/transactions */
+  readonly retryLimit: number
+  /** Milliseconds delay between retries (default: 500) */
+  readonly retryDelayMs?: number
 }
 
+/**
+ * Current state of a vault
+ */
 export interface VaultStatus {
   vaultId: string
   collateral: number
   debt: number
+  /** Collateral-to-debt ratio as percentage, rounded to 2 decimals */
   healthRatio: number
 }
 
+/**
+ * Structure of internal transaction responses
+ */
+interface TxResponse {
+  link: string
+  txId?: string
+}
+
+/**
+ * Core engine for managing vault operations with retries and validation.
+ */
 export class VaultCoreEngine {
-  private config: VaultConfig
+  private readonly config: VaultConfig
 
   constructor(config: VaultConfig) {
-    this.config = config
+    if (config.retryLimit < 0) throw new RangeError(`retryLimit must be ≥ 0, got ${config.retryLimit}`)
+    this.config = { retryDelayMs: 500, ...config }
   }
 
-  async initialize(vaultId: string, initialCollateral: number): Promise<void> {
-    await this.sendTransaction({
-      type: 'initVault',
-      vaultId,
-      collateral: initialCollateral
-    })
+  /**
+   * Initialize a new vault with starting collateral.
+   */
+  public async initialize(vaultId: string, initialCollateral: number): Promise<string> {
+    this.validateParams(vaultId, initialCollateral)
+    const res = await this.executeWithRetry(() =>
+      this.sendTransaction({ type: 'initVault', vaultId, collateral: initialCollateral })
+    )
+    return res.link
+n  }
+
+  /**
+   * Deposit additional collateral into a vault.
+   */
+  public async deposit(vaultId: string, amount: number): Promise<string> {
+    this.validateParams(vaultId, amount)
+    const res = await this.executeWithRetry(() =>
+      this.sendTransaction({ type: 'depositCollateral', vaultId, amount })
+    )
+    return res.link
   }
 
-  async deposit(vaultId: string, amount: number): Promise<string> {
-    return this.handleTransaction('depositCollateral', vaultId, amount)
+  /**
+   * Withdraw collateral from a vault.
+   */
+  public async withdraw(vaultId: string, amount: number): Promise<string> {
+    this.validateParams(vaultId, amount)
+    const res = await this.executeWithRetry(() =>
+      this.sendTransaction({ type: 'withdrawCollateral', vaultId, amount })
+    )
+    return res.link
   }
 
-  async withdraw(vaultId: string, amount: number): Promise<string> {
-    return this.handleTransaction('withdrawCollateral', vaultId, amount)
-  }
-
-  async getStatus(vaultId: string): Promise<VaultStatus> {
-    const result = await this.rpcCall<VaultStatus>('getVaultStatus', { vaultId })
+  /**
+   * Fetches and computes current vault status.
+   */
+  public async getStatus(vaultId: string): Promise<VaultStatus> {
+    if (!vaultId) throw new TypeError('vaultId is required')
+    const result = await this.executeWithRetry(() => this.rpcCall<VaultStatus>('getVaultStatus', { vaultId }))
+    const { collateral, debt } = result
+    const ratio = debt > 0 ? (collateral / debt) * 100 : Infinity
     return {
-      vaultId: result.vaultId,
-      collateral: result.collateral,
-      debt: result.debt,
-      healthRatio: Math.round((result.collateral / Math.max(result.debt, 1)) * 10000) / 100
+      vaultId,
+      collateral,
+      debt,
+      healthRatio: Math.round(ratio * 100) / 100,
     }
   }
 
-  private async handleTransaction(
-    method: string,
-    vaultId: string,
-    amount: number
-  ): Promise<string> {
-    const tx = await this.sendTransaction({ type: method, vaultId, amount })
-    return tx.link
+  /**
+   * Validates common parameters.
+   */
+  private validateParams(vaultId: string, amount: number): void {
+    if (!vaultId) throw new TypeError('vaultId must be provided')
+    if (!Number.isFinite(amount) || amount <= 0) {
+      throw new RangeError(`amount must be positive finite number, got ${amount}`)
+    }
   }
 
-  private async sendTransaction(params: any): Promise<{ link: string }> {
-    // placeholder for signing & sending
-    return { link: `https://tx.link/${Date.now()}` }
+  /**
+   * Generic retry wrapper for async operations.
+   */
+  private async executeWithRetry<T>(fn: () => Promise<T>): Promise<T> {
+    let lastErr: any
+    for (let attempt = 0; attempt <= this.config.retryLimit; attempt++) {
+      try {
+        return await fn()
+      } catch (err: any) {
+        lastErr = err
+        if (attempt === this.config.retryLimit) break
+        await this.delay(this.config.retryDelayMs!) 
+      }
+    }
+    throw new Error(`Operation failed after ${this.config.retryLimit + 1} attempts: ${lastErr.message}`)
   }
 
-  private async rpcCall<T>(method: string, params: any): Promise<T> {
-    // placeholder for on-chain RPC
+  /**
+   * Simulated on-chain transaction sender.
+   */
+  private async sendTransaction(params: Record<string, any>): Promise<TxResponse> {
+    // TODO: integrate signing & submission logic
+    return { link: `https://tx.link/${Date.now()}`, txId: `${Date.now()}` }
+  }
+
+  /**
+   * Simulated RPC call to on-chain node.
+   */
+  private async rpcCall<T>(method: string, params: Record<string, any>): Promise<T> {
+    // TODO: integrate RPC client logic
     return {} as T
+  }
+
+  /**
+   * Delay helper.
+   */
+  private delay(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms))
   }
 }
