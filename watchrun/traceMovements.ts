@@ -14,10 +14,7 @@ export interface WhaleStats {
   averageAmount: number
 }
 
-/**
- * Groups transfer records by all participating addresses.
- * Includes both senders and recipients.
- */
+
 export function groupByAddress(records: TransferRecord[]): Map<string, TransferRecord[]> {
   const map = new Map<string, TransferRecord[]>()
 
