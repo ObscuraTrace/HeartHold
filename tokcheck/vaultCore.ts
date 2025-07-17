@@ -1,6 +1,4 @@
-/**
- * Configuration for VaultCoreEngine
- */
+
 export interface VaultConfig {
   /** Network identifier (e.g. "mainnet", "devnet") */
   readonly networkId: string
@@ -12,9 +10,6 @@ export interface VaultConfig {
   readonly retryDelayMs?: number
 }
 
-/**
- * Current state of a vault
- */
 export interface VaultStatus {
   vaultId: string
   collateral: number
