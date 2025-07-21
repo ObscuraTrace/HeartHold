@@ -33,9 +33,6 @@ export function groupByAddress(records: TransferRecord[]): Map<string, TransferR
   return map
 }
 
-/**
- * Builds WhaleStats for a single address from its associated records
- */
 function buildWhaleStats(addr: string, recs: TransferRecord[], minThreshold: number): WhaleStats | null {
   const filtered = recs.filter(r => r.amount >= minThreshold)
   if (filtered.length === 0) return null
