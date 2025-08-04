@@ -1,14 +1,61 @@
-export const DEFAULT_SCAN_INTERVAL = 600_000  // 10 minutes in milliseconds
-export const MAX_TX_LOOKBACK = 200           // Maximum number of transactions to look back
-export const MIN_WHALE_THRESHOLD = 10_000     // Minimum token amount to consider as whale movement
+export interface MonitorConfig {
+  defaultScanIntervalMs: number
+  maxTxLookback: number
+  minWhaleThreshold: number
+  flashActivityWindowMs: number
+  riskScoreAlertThreshold: number
+  minTokenLiquidity: number
+  alertChannels: {
+    whaleMoves: string
+    suspiciousTokens: string
+    flashPumps: string
+  }
+}
 
-// Additional thresholds and tuning values
-export const FLASH_ACTIVITY_WINDOW_MS = 300_000   // 5 minutes window for burst detection
-export const RISK_SCORE_ALERT_THRESHOLD = 0.85    // Trigger alerts if risk score exceeds this
-export const MIN_TOKEN_LIQUIDITY = 5_000          // Skip tokens below this liquidity
+/**
+ * Default configuration for token monitoring and alerting.
+ * You can override any of these via process.env or a custom loader.
+ */
+export const DEFAULT_CONFIG: Readonly<MonitorConfig> = Object.freeze({
+  defaultScanIntervalMs: 600_000,       // 10 minutes
+  maxTxLookback: 200,                   // Max transactions to scan
+  minWhaleThreshold: 10_000,            // Minimum tokens to consider whale
+  flashActivityWindowMs: 300_000,       // 5-minute burst window
+  riskScoreAlertThreshold: 0.85,        // Alert risk above 85%
+  minTokenLiquidity: 5_000,             // Skip tokens with low liquidity
+  alertChannels: {
+    whaleMoves: "alerts/whales",
+    suspiciousTokens: "alerts/tokens",
+    flashPumps: "alerts/flash",
+  },
+})
 
-export const ALERT_CHANNELS = {
-  whaleMoves: "alerts/whales",
-  suspiciousTokens: "alerts/tokens",
-  flashPumps: "alerts/flash",
+/**
+ * Load configuration, allowing overrides via environment variables.
+ * Numeric values are parsed; channels fall back to defaults.
+ */
+export function loadConfig(): MonitorConfig {
+  const parseEnv = (key: string, fallback: number): number => {
+    const val = process.env[key]
+    if (val !== undefined) {
+      const n = Number(val)
+      if (!isNaN(n)) return n
+      console.warn(`Invalid number for ${key}: ${val}, using default ${fallback}`)
+    }
+    return fallback
+  }
+
+  return {
+    defaultScanIntervalMs: parseEnv("SCAN_INTERVAL_MS", DEFAULT_CONFIG.defaultScanIntervalMs),
+    maxTxLookback: parseEnv("MAX_TX_LOOKBACK", DEFAULT_CONFIG.maxTxLookback),
+    minWhaleThreshold: parseEnv("MIN_WHALE_THRESHOLD", DEFAULT_CONFIG.minWhaleThreshold),
+    flashActivityWindowMs: parseEnv("FLASH_WINDOW_MS", DEFAULT_CONFIG.flashActivityWindowMs),
+    riskScoreAlertThreshold: parseEnv("RISK_ALERT_THRESHOLD", DEFAULT_CONFIG.riskScoreAlertThreshold),
+    minTokenLiquidity: parseEnv("MIN_TOKEN_LIQUIDITY", DEFAULT_CONFIG.minTokenLiquidity),
+    alertChannels: {
+      whaleMoves: process.env.ALERT_CHANNEL_WHALES ?? DEFAULT_CONFIG.alertChannels.whaleMoves,
+      suspiciousTokens: process.env.ALERT_CHANNEL_TOKENS ?? DEFAULT_CONFIG.alertChannels.suspiciousTokens,
+      flashPumps: process.env.ALERT_CHANNEL_FLASH ?? DEFAULT_CONFIG.alertChannels.flashPumps,
+    },
+  }
 }
