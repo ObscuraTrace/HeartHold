@@ -18,17 +18,13 @@ export interface VaultStatus {
   healthRatio: number
 }
 
-/**
- * Structure of internal transaction responses
- */
+
 interface TxResponse {
   link: string
   txId?: string
 }
 
-/**
- * Core engine for managing vault operations with retries and validation.
- */
+
 export class VaultCoreEngine {
   private readonly config: VaultConfig
 
@@ -37,9 +33,7 @@ export class VaultCoreEngine {
     this.config = { retryDelayMs: 500, ...config }
   }
 
-  /**
-   * Initialize a new vault with starting collateral.
-   */
+
   public async initialize(vaultId: string, initialCollateral: number): Promise<string> {
     this.validateParams(vaultId, initialCollateral)
     const res = await this.executeWithRetry(() =>
@@ -59,9 +53,7 @@ n  }
     return res.link
   }
 
-  /**
-   * Withdraw collateral from a vault.
-   */
+
   public async withdraw(vaultId: string, amount: number): Promise<string> {
     this.validateParams(vaultId, amount)
     const res = await this.executeWithRetry(() =>
@@ -70,9 +62,7 @@ n  }
     return res.link
   }
 
-  /**
-   * Fetches and computes current vault status.
-   */
+
   public async getStatus(vaultId: string): Promise<VaultStatus> {
     if (!vaultId) throw new TypeError('vaultId is required')
     const result = await this.executeWithRetry(() => this.rpcCall<VaultStatus>('getVaultStatus', { vaultId }))
@@ -86,9 +76,8 @@ n  }
     }
   }
 
-  /**
-   * Validates common parameters.
-   */
+
+
   private validateParams(vaultId: string, amount: number): void {
     if (!vaultId) throw new TypeError('vaultId must be provided')
     if (!Number.isFinite(amount) || amount <= 0) {
@@ -96,9 +85,7 @@ n  }
     }
   }
 
-  /**
-   * Generic retry wrapper for async operations.
-   */
+
   private async executeWithRetry<T>(fn: () => Promise<T>): Promise<T> {
     let lastErr: any
     for (let attempt = 0; attempt <= this.config.retryLimit; attempt++) {
@@ -113,25 +100,19 @@ n  }
     throw new Error(`Operation failed after ${this.config.retryLimit + 1} attempts: ${lastErr.message}`)
   }
 
-  /**
-   * Simulated on-chain transaction sender.
-   */
+
   private async sendTransaction(params: Record<string, any>): Promise<TxResponse> {
     // TODO: integrate signing & submission logic
     return { link: `https://tx.link/${Date.now()}`, txId: `${Date.now()}` }
   }
 
-  /**
-   * Simulated RPC call to on-chain node.
-   */
+
   private async rpcCall<T>(method: string, params: Record<string, any>): Promise<T> {
     // TODO: integrate RPC client logic
     return {} as T
   }
 
-  /**
-   * Delay helper.
-   */
+
   private delay(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms))
   }
