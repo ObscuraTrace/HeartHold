@@ -1,12 +1,84 @@
 {
   "project": "ObscuraTrace",
-  "version": "1.0",
+  "version": "1.1",
+  "environment": "production",
+
   "enabledModules": ["bot", "sybil", "whale", "flashloan"],
+  "modules": {
+    "bot": {
+      "enabled": true
+    },
+    "sybil": {
+      "enabled": true,
+      "minClusterSize": 3,
+      "scoreThreshold": 0.6,
+      "lookbackHours": 24
+    },
+    "whale": {
+      "enabled": true,
+      "txVolumeUsdThreshold": 100000,
+      "lookbackHours": 24
+    },
+    "flashloan": {
+      "enabled": true,
+      "minLoanUsd": 500000,
+      "lookbackHours": 24
+    }
+  },
+
   "maxRequestsPerMinute": 60,
+  "rateLimit": {
+    "maxPerMinute": 60,
+    "burst": 120,
+    "windowSeconds": 60
+  },
+
   "retryLimit": 3,
+  "retry": {
+    "limit": 3,
+    "backoffMs": 500,
+    "strategy": "linear"
+  },
+
+  "timeouts": {
+    "requestMs": 10000,
+    "connectMs": 2000
+  },
+
+  "telemetry": {
+    "logLevel": "info",
+    "structured": true,
+    "traceSampling": 0
+  },
+
+  "cache": {
+    "enabled": true,
+    "ttlSeconds": 300,
+    "maxEntries": 10000
+  },
+
   "riskLevels": {
     "low": 1,
     "medium": 2,
     "high": 3
+  },
+  "riskBands": {
+    "moderateThreshold": 0.4,
+    "highThreshold": 0.7
+  },
+
+  "endpoints": {
+    "apiBaseUrl": "https://api.obscuratrace.io",
+    "rpcEndpoint": "https://rpc.mainnet.solana.com"
+  },
+
+  "security": {
+    "allowlistCidrs": [],
+    "blocklistAddresses": []
+  },
+
+  "flags": {
+    "dryRun": false,
+    "strictValidation": true
   }
 }
