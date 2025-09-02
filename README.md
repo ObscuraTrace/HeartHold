@@ -1,54 +1,61 @@
-# 🌑 ObscuraTrace: Hidden Blockchain Risk Detection
+# ObscuraTrace: Hidden Blockchain Risk Detection  
 
-**ObscuraTrace** is an AI-powered forensic tool designed to uncover hidden threats, track suspicious behavior, and enhance transactional safety across blockchain environments.
-
-## 🔑 Key Features
-
-### 🕶️ StealthGuard  
-Detects under-the-radar blockchain activity such as stealth whale entries, layered transfers, and disguised wash trades.
-
-### 🕵️‍♂️ ShadowTrack  
-Monitors behavioral anomalies — flags suspicious shifts like rug pulls, coordinated exits, or rapid token dumps.
-
-### ⚠️ CrypticAlert  
-Identifies high-risk trades based on liquidity impact, transaction timing, and directional slippage that may signal manipulative intent.
-
-### 🌐 SignalNet  
-Cross-references wallet actions with global blockchain signals to identify behavioral clusters, bot loops, or phishing funnels.
+ObscuraTrace is an AI-powered forensic suite that uncovers concealed threats, tracks suspicious wallet behavior, and enhances transaction security across blockchain networks.  
+It’s not just analytics — it’s a lens into the unseen.  
 
 ---
-## 🗾 What’s Next
 
-### ✅ Phase 1: MVP (Completed)  
-**📅 Released:** Q3 2025  
-The foundation of ObscuraTrace has been deployed — offering stealth detection, real-time risk flags, and first-layer behavioral analysis.
+## 🔑 Core Agents  
 
-- 🛰️ **StealthGuard** — Hidden transaction detection module  
-- 🕵️ **ShadowTrack** — Anomaly detection system for behavior shifts  
-- 🔐 **CrypticAlert** — Real-time transaction risk analyzer  
-- 🧭 **DarkNetProbe** — Tracks large, suspicious token movements  
-- 🧪 Minimal UI + Chrome Extension Release  
-- 🧩 $OBSCU Token Access Logic + Discord Role Sync
+Every ObscuraTrace release includes the 5 foundation agents of the ecosystem, reframed through its **dark-forensics narrative**:  
 
-### 🟣 Phase 2: Active Development  
-**📅 Ongoing:** Q4 2025  
-Functionality expands with enhanced signal depth, clustering intelligence, and customizable alerting.
+- 🔍 **Analyzer Agent** — token scans & anomaly detection in stealth activity  
+- 💎 **Gem Hunter Agent** — identifies unusual early patterns & stealth launches  
+- 📈 **Signal Agent** — highlights abnormal flows, sudden volume spikes, or clustered dumps  
+- 🐋 **Observer Agent** — tracks whales, recursive transfers, and Sybil loops  
+- 🧭 **Strateg Agent** — builds protective trading strategies against coordinated exploits  
 
-- 📊 **Token Trend Analysis Module** — Detects abnormal token trend formations  
-- ⚙️ **Custom AI Risk Filters** — User-specific AI-driven threat filtration  
-- 🧬 **Expanded Sybil Map** — Advanced clustering of wallet behavior  
-- 🚨 **Smart Alert Framework** — Context-aware, real-time alert delivery  
-- 🔗 **Role-Based UI Unlocks** — Dynamic interface tied to user access level
+➡️ **Custom Agent Builder** lets you fuse these into your own forensic toolkit.  
 
-### 🔴 Phase 3: Upcoming Capabilities  
-**📅 Planned:** Q1 2026  
-ObscuraTrace enters predictive mode — enabling autonomous insights and cross-chain defense systems.
+---
 
-- 🧠 **AI Risk Forecast Engine** — Predicts high-risk vectors based on emerging patterns  
-- 🌐 **Cross-Chain Risk Mapping** — Consolidates threats across Solana, Ethereum, BSC, and more  
-- 🕷️ **Deep Sybil Pattern Detector v2** — Reinforced clustering with anomaly heatmaps  
-- 🛰️ **Flashloan Radar** — Identifies atomic exploit patterns in real time  
-- 💬 **Social Sentiment Analyzer** — Parses off-chain & on-chain signals for early warnings
+## 📲 Ecosystem Integrations  
+
+- **Chrome Extension** → quick scans & alerts in-browser  
+- **Telegram Mini App** → instant forensic insights at chat speed  
+- **Token Utility ($OBSCU)** → unlocks advanced modules, role tiers, and strategy layers  
+
+---
+
+## ❓ FAQ  
+
+**What is ObscuraTrace?**  
+An AI-powered forensic tool designed to reveal hidden blockchain risks and protect traders.  
+
+**How does it detect threats?**  
+By combining on-chain anomaly detection, clustering analysis, and predictive AI risk modeling.  
+
+**Which networks are supported?**  
+Currently optimized for Solana, with expansion to Ethereum and BSC planned.  
+
+**Is the AI explainable?**  
+Yes — all agent verdicts include transparent breakdowns of triggers and risk factors.  
+
+**What is $OBRT used for?**  
+Token holders gain access to advanced modules, role-based UI unlocks, and community governance.  
+
+---
+
+## 🛠 Open Source  
+
+Core logic modules (Solana scanners, anomaly clustering, alert engine) will be progressively open-sourced under MIT license.  
+
+---
+
+## 📧 Support  
+
+For support and collaboration inquiries:  
+**obscuratrace@gmail.com**  
 
 ---
 ## 🧠 AI Modules
