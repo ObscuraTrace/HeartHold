@@ -25,6 +25,7 @@ Every ObscuraTrace release includes the 5 foundation agents of the ecosystem, re
 [![Docs](https://img.shields.io/badge/Docs-GitBook-3B82F6?logo=bookstack&logoColor=white)](https://obscuratrace.gitbook.io/obscuratrace/)  
 [![Terminal](https://img.shields.io/badge/Web-Terminal-8B5CF6?logo=databricks&logoColor=white)](https://www.obscuratrace.com/terminal)  
 [![Twitter](https://img.shields.io/badge/Twitter-@ObscuraTrace-1DA1F2?logo=twitter&logoColor=white)](https://x.com/ObscuraTrace)  
+[![Telegram](https://img.shields.io/badge/Telegram-Community-2CA5E0?logo=telegram&logoColor=white)](https://t.me/ObscuraTraceAI)  
 
 ObscuraTrace is an AI-powered forensic suite that uncovers concealed threats, tracks suspicious wallet behavior, and enhances transaction security across blockchain networks.  
 It’s not just analytics — it’s a lens into the unseen.  
