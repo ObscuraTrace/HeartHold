@@ -16,6 +16,18 @@ Every ObscuraTrace release includes the 5 foundation agents of the ecosystem, re
 - 🧭 **Strateg Agent** — builds protective trading strategies against coordinated exploits  
 
 ➡️ **Custom Agent Builder** lets you fuse these into your own forensic toolkit.  
+---
+
+# ObscuraTrace: Hidden Blockchain Risk Detection  
+
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/obscuratrace/lphfgpfjlepkahelojgpmgbpkgbliiea?authuser=0&hl=ru)  
+[![GitHub](https://img.shields.io/badge/GitHub-Code-181717?logo=github&logoColor=white)](https://github.com/ObscuraTrace/ObscuraTrace-)  
+[![Docs](https://img.shields.io/badge/Docs-GitBook-3B82F6?logo=bookstack&logoColor=white)](https://obscuratrace.gitbook.io/obscuratrace/)  
+[![Terminal](https://img.shields.io/badge/Web-Terminal-8B5CF6?logo=databricks&logoColor=white)](https://www.obscuratrace.com/terminal)  
+[![Twitter](https://img.shields.io/badge/Twitter-@ObscuraTrace-1DA1F2?logo=twitter&logoColor=white)](https://x.com/ObscuraTrace)  
+
+ObscuraTrace is an AI-powered forensic suite that uncovers concealed threats, tracks suspicious wallet behavior, and enhances transaction security across blockchain networks.  
+It’s not just analytics — it’s a lens into the unseen.  
 
 ---
 
