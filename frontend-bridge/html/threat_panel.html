@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tools Dashboard</title>
+  <meta charset="UTF-8">
+  <title>Sylphia Token Monitor</title>
   <link rel="stylesheet" href="../css/dashboard.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <h1>Sylphia Token Monitor</h1>
-  <div id="app"></div>
+  <header>
+    <h1>Sylphia Token Monitor</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Volume</a></li>
+        <li><a href="#">Alerts</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section class="dashboard-grid">
+      <div class="card">
+        <h2>Current Metrics</h2>
+        <p>Loading live data...</p>
+      </div>
+
+      <div class="card">
+        <h2>Volume Chart</h2>
+        <canvas id="volumeChart"></canvas>
+      </div>
+
+      <div class="card">
+        <h2>Recent Surge Events</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Previous</th>
+              <th>Current</th>
+              <th>Ratio</th>
+            </tr>
+          </thead>
+          <tbody id="surgeTableBody">
+            <tr><td colspan="4">No events yet</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>System Alerts</h2>
+        <ul id="alertsList">
+          <li>No active alerts</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 SylphiaTech — Token Monitoring Dashboard</p>
+  </footer>
+
+  <script src="../js/dashboard.js"></script>
 </body>
 </html>
