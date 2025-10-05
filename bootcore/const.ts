@@ -12,10 +12,7 @@ export interface MonitorConfig {
   }
 }
 
-/**
- * Default configuration for token monitoring and alerting.
- * You can override any of these via process.env or a custom loader.
- */
+
 export const DEFAULT_CONFIG: Readonly<MonitorConfig> = Object.freeze({
   defaultScanIntervalMs: 600_000,       // 10 minutes
   maxTxLookback: 200,                   // Max transactions to scan
@@ -30,10 +27,7 @@ export const DEFAULT_CONFIG: Readonly<MonitorConfig> = Object.freeze({
   },
 })
 
-/**
- * Load configuration, allowing overrides via environment variables.
- * Numeric values are parsed; channels fall back to defaults.
- */
+
 export function loadConfig(): MonitorConfig {
   const parseEnv = (key: string, fallback: number): number => {
     const val = process.env[key]
