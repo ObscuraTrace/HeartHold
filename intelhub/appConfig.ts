@@ -1,5 +1,4 @@
-
-export const PROJECT_NAME = "ObscuraTrace"
+export const PROJECT_NAME = "OrbixWallet"
 
 export interface AppConfig {
   projectName: string
@@ -32,5 +31,11 @@ export const config: AppConfig = {
     process.env.DEXSCREENER_API ||
     "https://api.dexscreener.com/latest/dex/tokens",
 
+  birdyApi:
+    process.env.BIRDY_API ||
+    "https://api.birdy.ai/v1",
 
+  heartbeatUrl:
+    process.env.HEARTBEAT_URL ||
+    "https://status.orbixvault.app/heartbeat"
 }
