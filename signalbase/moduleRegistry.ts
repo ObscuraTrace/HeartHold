@@ -1,15 +1,14 @@
-import * as EngineCore from "./vaultEngineCore"
-import * as VaultActions from "./initializeVaultAction"
-import * as VaultOps from "./vaultOperationsEngine"
+import * as WalletCore from "./walletCoreEngine"
+import * as WalletActions from "./walletActionInit"
+import * as WalletOps from "./walletOpsEngine"
 
 export const registry = {
-  EngineCore,
-  VaultActions,
-  VaultOps,
+  WalletCore,
+  WalletActions,
+  WalletOps,
 } as const
 
 export type ModuleName = keyof typeof registry
-
 
 export function loadModule(name: ModuleName) {
   const mod = registry[name]
