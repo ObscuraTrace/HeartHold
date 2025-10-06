@@ -1,4 +1,4 @@
-# Orbix Wallet — AI-Powered Solana Intelligence
+z# Orbix Wallet — AI-Powered Solana Intelligence
 
 [![Website](https://img.shields.io/badge/Web-orbixvault.app-0EA5E9?logo=vercel&logoColor=white)](https://orbixvault.app/)
 [![Docs](https://img.shields.io/badge/Docs-GitBook-3B82F6?logo=bookstack&logoColor=white)](https://orbixwallet.gitbook.io/orbixwallet/)
@@ -49,7 +49,7 @@ Every Orbix release includes 5 foundation agents that can be combined into custo
 
 - **Chrome Extension** → instant scans & in-browser alerts  
 - **Telegram Mini App** → forensic insights at chat speed  
-- **Token Utility ($ORBX)** → unlocks advanced modules, role tiers, and strategy layers  
+- **Token Utility ($ORBIX)** → unlocks advanced modules, role tiers, and strategy layers  
 
 ---
 
