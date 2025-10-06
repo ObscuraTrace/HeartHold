@@ -43,9 +43,4 @@ Every ObscuraTrace release comes with 5 foundation agents designed for forensic 
 - **Telegram Mini App** → forensic insights at chat speed  
 - **Token Utility ($OBSCURA)** → unlocks advanced modules, role tiers, and detection layers  
 
----
 
-## 📧 Support  
-
-For support and collaboration inquiries:  
-**obscuratrace@gmail.com**  
