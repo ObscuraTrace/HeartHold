@@ -2,7 +2,7 @@
 export interface TokenLaunch {
   tokenId: string
   createdAt: number
-  volumes: number[]  // chronological volume per interval
+  volumes: number[] 
 }
 
 export interface EmergingToken {
