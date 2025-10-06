@@ -61,10 +61,7 @@ function buildWhaleStats(addr: string, recs: TransferRecord[], minThreshold: num
   }
 }
 
-/**
- * Analyzes whale-like behavior in token movements.
- * Filters by a minimum amount threshold.
- */
+
 export function analyzeWhaleMovements(
   records: TransferRecord[],
   minThreshold: number
