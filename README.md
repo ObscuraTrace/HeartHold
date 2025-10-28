@@ -34,7 +34,7 @@ HeartHold includes modular agents to empower safe and intelligent wallet usage:
 
 ---
 
-## 📲 Ecosystem Integrations  
+## Ecosystem Integrations  
 
 - **Chrome Extension** → instant checks and AI insights directly in-browser  
 - **Telegram Mini App** → wallet actions and security alerts at chat speed  
