@@ -1,46 +1,43 @@
+[![Website](https://img.shields.io/badge/Web-hearthold.app-E91E63?logo=vercel&logoColor=white)](https://www.hearthold.app/)  
+[![Docs](https://img.shields.io/badge/Docs-GitBook-9C27B0?logo=bookstack&logoColor=white)](https://hearthold-wallet.gitbook.io/hearthold-docs)  
+[![Twitter](https://img.shields.io/badge/Twitter-@HeartholdWallet-1DA1F2?logo=twitter&logoColor=white)](https://x.com/HeartholdWallet)  
+[![Telegram](https://img.shields.io/badge/Telegram-Community-FF4081?logo=telegram&logoColor=white)](https://t.me/HeartHoldAI)  
 
+# HeartHold — AI-Powered Solana Wallet  
 
-[![Website](https://img.shields.io/badge/Web-obscuratrace.com-0EA5E9?logo=vercel&logoColor=white)](https://www.obscuratrace.com/)  
-[![Docs](https://img.shields.io/badge/Docs-GitBook-3B82F6?logo=bookstack&logoColor=white)](https://obscuratrace.gitbook.io/obscuratrace/)  
-[![Twitter](https://img.shields.io/badge/Twitter-@ObscuraTrace-1DA1F2?logo=twitter&logoColor=white)](https://x.com/ObscuraTrace)  
-[![Telegram](https://img.shields.io/badge/Telegram-Community-2CA5E0?logo=telegram&logoColor=white)](https://t.me/ObscuraTrace_AI)  
-
-# ObscuraTrace — AI-Powered On-Chain Forensics  
-
-> **ObscuraTrace** is an AI-driven forensic layer built for Solana & multi-chain monitoring  
-It reveals hidden threats, traces suspicious flows, and provides transparent AI verdicts for traders, analysts, and security teams  
+> **HeartHold** is a Solana-native wallet with AI security and clean UX  
+Built for traders, builders, and everyday users who value clarity, speed, and protection  
 
 ---
 
 ## 🔑 Core Agents  
 
-Every ObscuraTrace release comes with 5 foundation agents designed for forensic precision:  
+HeartHold includes modular agents to empower safe and intelligent wallet usage:  
 
-- 🔍 **Analyzer Agent** — token audits, contract red flags, and anomaly detection  
-- 💎 **Gem Hunter Agent** — early discovery of stealth launches & liquidity patterns  
-- 📈 **Signal Agent** — alerts for unusual flows, volume spikes, and flash dumps  
-- 🐋 **Observer Agent** — whale tracking, recursive transfers, and Sybil structures  
-- 🧭 **Strateg Agent** — builds defense strategies against coordinated exploits  
+- 🔍 **Analyzer Agent** — scans tokens and highlights contract risks  
+- 💎 **Gem Hunter Agent** — detects new tokens and liquidity entries  
+- 📈 **Signal Agent** — alerts for unusual flows and token volatility  
+- 🐋 **Observer Agent** — tracks whales and large wallet activity  
+- 🧭 **Strateg Agent** — helps form portfolio and trade strategies  
 
-➡️ **Custom Agent Builder** lets you assemble your own stack for tailored forensics  
+➡️ **Custom Agent Builder** lets you assemble your own AI-powered wallet assistant  
 
 ---
 
 ## ✨ Key Features  
 
-- Real-time forensic scans of tokens & wallets  
-- Dark flow & cluster tracing across Solana  
-- Instant threat alerts via **Telegram** or **Browser Extension**  
-- Transparent AI verdicts with forensic-style breakdowns  
-- Portfolio sync enriched with risk overlays  
-
+- Secure Solana wallet with simple multi-account management  
+- AI assistant for risk summaries and transaction insights  
+- Real-time monitoring of tokens and wallet flows  
+- Exportable transaction history (CSV / JSON)  
+- DEX integrations for smooth trading access  
 
 ---
 
 ## 📲 Ecosystem Integrations  
 
-- **Chrome Extension** → instant scans & AI verdicts directly in-browser  
-- **Telegram Mini App** → forensic insights at chat speed  
-- **Token Utility ($OBSCURA)** → unlocks advanced modules, role tiers, and detection layers  
+- **Chrome Extension** → instant checks and AI insights directly in-browser  
+- **Telegram Mini App** → wallet actions and security alerts at chat speed  
+- **Token Utility ($HEART)** → unlocks role tiers, boosted limits, and premium features  
 
-
+---
