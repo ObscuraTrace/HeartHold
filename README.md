@@ -1,43 +1,43 @@
-[![Website](https://img.shields.io/badge/Web-hearthold.app-E91E63?logo=vercel&logoColor=white)](https://www.hearthold.app/)  
-[![Docs](https://img.shields.io/badge/Docs-GitBook-9C27B0?logo=bookstack&logoColor=white)](https://hearthold-wallet.gitbook.io/hearthold-docs)  
-[![Twitter](https://img.shields.io/badge/Twitter-@HeartholdWallet-1DA1F2?logo=twitter&logoColor=white)](https://x.com/HeartholdWallet)  
-[![Telegram](https://img.shields.io/badge/Telegram-Community-FF4081?logo=telegram&logoColor=white)](https://t.me/HeartHoldAI)  
+[![Website](https://img.shields.io/badge/Web-pumpkinatorx.app-FF6B1A?logo=vercel&logoColor=white)](https://www.pumpkinatorx.app/)  
+[![Docs](https://img.shields.io/badge/Docs-GitBook-F57C00?logo=bookstack&logoColor=white)](https://pumpkinatorx.gitbook.io/pumpkinatorx-docs)  
+[![Twitter](https://img.shields.io/badge/Twitter-@PumpkinatorX-FE9200?logo=twitter&logoColor=white)](https://x.com/PumpkinatorX)  
+[![Telegram](https://img.shields.io/badge/Telegram-Community-FF8C1A?logo=telegram&logoColor=white)](https://t.me/PumpkinatorXAI)  
 
-# HeartHold — AI-Powered Solana Wallet  
+# 🎃 PumpkinatorX — AI-Powered DeFi Sentinel  
 
-> **HeartHold** is a Solana-native wallet with AI security and clean UX  
-Built for traders, builders, and everyday users who value clarity, speed, and protection  
+> **PumpkinatorX** is a next-gen Web3 intelligence layer built to monitor tokens, wallets, and hidden threats across the on-chain landscape  
+Focused on **security, transparency, and precision**, it turns chaos into insight for every trader and builder  
 
 ---
 
 ## 🔑 Core Agents  
 
-HeartHold includes modular agents to empower safe and intelligent wallet usage:  
+PumpkinatorX includes adaptive AI agents designed for deep blockchain reconnaissance:  
 
-- 🔍 **Analyzer Agent** — scans tokens and highlights contract risks  
-- 💎 **Gem Hunter Agent** — detects new tokens and liquidity entries  
-- 📈 **Signal Agent** — alerts for unusual flows and token volatility  
-- 🐋 **Observer Agent** — tracks whales and large wallet activity  
-- 🧭 **Strateg Agent** — helps form portfolio and trade strategies  
+- 🔍 **Analyzer Agent** — dissects tokens and flags contract anomalies  
+- 💎 **Gem Hunter Agent** — identifies fresh launches and early liquidity moves  
+- 📈 **Signal Agent** — tracks market pulse, spikes, and behavioral flows  
+- 🐋 **Observer Agent** — monitors whales and insider wallet clusters  
+- 🧭 **Strateg Agent** — crafts optimal trade routes and security frameworks  
 
-➡️ **Custom Agent Builder** lets you assemble your own AI-powered wallet assistant  
+➡️ **Custom Agent Builder** allows users to forge unique intelligence stacks tuned to their goals  
 
 ---
 
 ## ✨ Key Features  
 
-- Secure Solana wallet with simple multi-account management  
-- AI assistant for risk summaries and transaction insights  
-- Real-time monitoring of tokens and wallet flows  
-- Exportable transaction history (CSV / JSON)  
-- DEX integrations for smooth trading access  
+- AI-driven threat detection and wallet analytics  
+- Cross-token and liquidity behavior mapping  
+- Real-time monitoring of transactions and flows  
+- Exportable analytics (CSV / JSON)  
+- DEX hooks and alert integrations  
 
 ---
 
 ## Ecosystem Integrations  
 
-- **Chrome Extension** → instant checks and AI insights directly in-browser  
-- **Telegram Mini App** → wallet actions and security alerts at chat speed  
-- **Token Utility ($HEART)** → unlocks role tiers, boosted limits, and premium features  
+- **Chrome Extension** → instant AI scans and token risk context in-browser  
+- **Telegram Mini App** → on-chain surveillance and alerts in real time  
+- **Token Utility ($PUMPKIN)** → powers access tiers, boosts, and premium intel feeds  
 
 ---
