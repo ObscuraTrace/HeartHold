@@ -1,10 +1,10 @@
 {
-  "scanReportId": "selka_diagnostic_20250628_001",
+  "scanReportId": "diagnostic_20250628_001",
   "timestamp": "2025-06-28T09:44:13Z",
-  "engine": "SelkaSense::SolanaTraceModule",
+  "engine": ":SolanaTraceModule",
   "tokenProfile": {
     "symbol": "XYZ",
-    "mintAddress": "7hsd83Ksnq3fa45sgYsA8TUGsRnb9uZ9qebFwXvJtvqX",
+    "mintAddress": "",
     "projectLabel": "Unknown"
   },
   "riskFlags": {
