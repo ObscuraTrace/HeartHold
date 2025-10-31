@@ -17,9 +17,9 @@ export const DEFAULT_CONFIG: Readonly<MonitorConfig> = Object.freeze({
   defaultScanIntervalMs: 600_000,       // 10 minutes
   maxTxLookback: 200,                   // Max transactions to scan
   minWhaleThreshold: 10_000,            // Minimum tokens to consider whale
-  flashActivityWindowMs: 300_000,       // 5-minute burst window
-  riskScoreAlertThreshold: 0.85,        // Alert risk above 85%
-  minTokenLiquidity: 5_000,             // Skip tokens with low liquidity
+  flashActivityWindowMs: 300_000,       
+  riskScoreAlertThreshold: 0.85,        
+  minTokenLiquidity: 5_000,             
   alertChannels: {
     whaleMoves: "alerts/whales",
     suspiciousTokens: "alerts/tokens",
